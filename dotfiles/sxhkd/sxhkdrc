@@ -131,3 +131,54 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+#########################
+#     MULTIMEDIA KEYS   #
+#########################
+
+#Raises volume
+XF86AudioRaiseVolume
+    amixer set Master 10%+
+
+#Lowers volume
+XF86AudioLowerVolume
+    amixer set Master 10%-
+
+#Mute
+XF86AudioMute
+    amixer -D pulse set Master 1+ toggle
+
+#Playerctl works for Pragha, Spotify and others
+#DELETE the line for mpc if you want to use playerctl
+#putting a hashtag in front of the mpc line will NOT work
+#mpc works for ncmpcpp
+
+#PLAY
+#XF86AudioPlay
+#    mpc toggle
+    #playerctl play-pause
+
+#Next
+#XF86AudioNext
+#     mpc next
+     #playerctl next
+
+#previous
+#XF86AudioPrev
+#    mpc prev
+    #playerctl previous
+
+#Stop
+#XF86AudioStop
+#    mpc stop
+    #playerctl stop
+
+#Brightness up
+XF86MonBrightnessUp
+    brightnessctl set 10%+
+
+#Brightness down
+XF86MonBrightnessDown
+    brightnessctl set 10%-
+
+#KBD Brightness up

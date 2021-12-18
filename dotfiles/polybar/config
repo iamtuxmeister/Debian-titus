@@ -46,7 +46,7 @@ shade18 = ${xrdb:color0}
 
 [bar/bar]
 width = 100%
-height = 40
+height = 30
 offset-x = 0
 offset-y = 0
 ;radius = 18.0
@@ -56,11 +56,11 @@ bottom = false
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-overline-size = 5
-underline-size = 5
+overline-size = 3
+underline-size = 2
 line-color = ${colors.background}
 
-border-bottom-size = 3
+border-bottom-size = 2
 border-color = ${colors.shade0}
 
 padding-left = 1
@@ -69,16 +69,17 @@ padding-right = 1
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = Fira Code:style=Regular:size=15;4
-font-1 = Font Awesome 5 Brands:size=15;4
-font-2 = Font Awesome 5 Free Solid:size=15;4
-font-3 = FiraCode Nerd Font Mono:style=Regular:size=18;4
-font-4 = Font Awesome 5 Free Solid:size=18;4
-font-5 = Noto Color Emoji:scale=20;4
+font-0 = Fira Code:style=Regular:size=12;4
+font-1 = Font Awesome 5 Brands:size=12;4
+font-2 = Font Awesome 5 Free Solid:size=12;4
+font-3 = FiraCode Nerd Font Mono:style=Regular:size=15;4
+font-4 = Font Awesome 5 Free Solid:size=15;4
+font-5 = Noto Color Emoji:scale=16;4
 
 modules-left = launcher sep left bspwm right sep left bsplayout bspmode right
 modules-center = xwindow
-modules-right = left pulseaudio right sep left battery backlight bluetooth vpn dunst redshift right sep left eth wlan right sep left time right sep powermenu
+;modules-right = left pulseaudio right sep left battery backlight bluetooth vpn dunst redshift right sep left eth wlan right sep left time right sep powermenu
+modules-right = left pulseaudio right sep left battery backlight bluetooth dunst right sep left eth wlan right sep left time right sep powermenu
 
 override-redirect = true
 wm-restack = bspwm
@@ -278,7 +279,7 @@ label-marked-padding-left = 1
 [module/launcher]
 type = custom/text
 content-background = ${colors.background}
-content-foreground = ${colors.shade17}
+content-foreground = ${colors.shade12}
 content-padding = 1
 click-left = "rofi -show drun"
 content = ""
@@ -290,7 +291,7 @@ label-maxlen = 120
 label-empty = Desktop
 
 format = <label>
-format-prefix = ""
+format-prefix = " "
 format-prefix-foreground = ${colors.shade14}
 format-foreground = ${colors.shade14}
 ;format-background = ${colors.shade16}
@@ -432,6 +433,11 @@ format-charging-padding-right = 5
 format-charging-overline = ${colors.background}
 format-charging-underline = ${colors.background}
 
+format-full-foreground = ${colors.shade3}
+format-full-background = ${colors.shade16}
+format-full-overline = ${colors.background}
+format-full-underline = ${colors.background}
+
 ; Available tags:
 ;   <label-discharging> (default)
 ;   <bar-capacity>
@@ -542,11 +548,11 @@ bar-empty-underline = ${colors.background}
 
 [module/eth]
 type = internal/network
-interface = enp5s0
+interface = eno1
 interval = 3.0
 
 ;format-connected-underline = ${xrdb:color2}
-format-connected-prefix = ""
+format-connected-prefix = " "
 format-connected-background = ${colors.shade16}
 ;format-connected-padding = 1
 format-connected-prefix-foreground = ${colors.shade5}
@@ -566,7 +572,7 @@ format-disconnected =
 
 [module/wlan]
 type = internal/network
-interface = wlp0s20f3
+interface = wlp3s0
 interval = 3.0
 
 format-connected-background = ${colors.shade16}
@@ -638,7 +644,7 @@ label = %{A1:~/.config/polybar/polybar-scripts/cal-popup.sh --popup &:}%time%%{A
 [module/powermenu]
 type = custom/text
 content-background = ${colors.background}
-content-foreground = ${colors.shade17}
+content-foreground = ${colors.shade12}
 content-padding = 1
 click-left = "$HOME/.config/rofi/powermenu/powermenu.sh"
 content = "⏻"

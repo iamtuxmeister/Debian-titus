@@ -11,7 +11,7 @@ dpkg -i 'Custom Packages/rofi_1.7.0-1_amd64.deb'
 apt update
 
 # Add base packages
-apt install unzip picom bspwm polybar sddm rofi kitty thunar flameshot neofetch sxhkd git lxpolkit lxappearance xorg
+apt install psmisc alsa-utils firefox pulseaudio unzip picom bspwm polybar sddm rofi kitty thunar flameshot neofetch sxhkd git lxpolkit lxappearance xorg
 
 # Download Nordic Theme
 cd /usr/share/themes/
