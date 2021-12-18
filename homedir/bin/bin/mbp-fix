@@ -1,0 +1,6 @@
+sudo setpci -v -H1 -s 00:01.00 BRIDGE_CONTROL=0
+sudo echo XHC1 > /proc/acpi/wakeup
+sudo macfanctld
+sudo echo "disable" > /sys/firmware/acpi/interrupts/gpe06
+sudo echo "disable" > /sys/firmware/acpi/interrupts/gpe17
+sudo chmod a+w /sys/class/backlight/gmux_backlight/brightness

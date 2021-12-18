@@ -27,6 +27,6 @@ sudo ./install.sh
 
 echo "RUN LXAPPEARANCE"
 cd ../debian-titus
-
-cp -R homedir/* ~/
+cp -R homedir/.X* ~/
+cp -R homedir/.zsh* ~/
 cp -R dotfiles/* ~/.config/
