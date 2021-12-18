@@ -25,8 +25,13 @@ git clone https://github.com/vinceliuice/Layan-cursors
 cd Layan-cursors
 sudo ./install.sh
 
+echo "Changing Shell to zsh"
+chsh -s /usr/bin/zsh
+
 echo "RUN LXAPPEARANCE"
 cd ../debian-titus
 cp -R homedir/.X* ~/
 cp -R homedir/.zsh* ~/
+cp -R homedir/bin ~/
+cp homedir/.tmux.conf ~/
 cp -R dotfiles/* ~/.config/
