@@ -76,7 +76,8 @@ font-3 = FiraCode Nerd Font Mono:style=Regular:size=15;4
 font-4 = Font Awesome 5 Free Solid:size=15;4
 font-5 = Noto Color Emoji:scale=16;4
 
-modules-left = launcher sep left bspwm right sep left bsplayout bspmode right
+;modules-left = launcher sep left bspwm right sep left bsplayout bspmode right
+modules-left = launcher sep left workspaces right
 modules-center = xwindow
 ;modules-right = left pulseaudio right sep left battery backlight bluetooth vpn dunst redshift right sep left eth wlan right sep left time right sep powermenu
 modules-right = left pulseaudio right sep left battery backlight bluetooth dunst right sep left eth wlan right sep left time right sep powermenu
@@ -150,6 +151,61 @@ type = custom/script
 tail = true
 exec = ~/tray_width.sh
 format-background = ${colors.shade16}
+
+[module/workspaces]
+type = internal/xworkspaces
+
+format = <label-state>
+pin-workspaces = false
+enable-scroll = true
+label-separator = "  "
+label-separator-background = ${colors.shade16}
+label-separator-overline = ${colors.background}
+label-separator-underline = ${colors.background}
+
+
+icon-0 = 1;
+icon-1 = 2;
+icon-2 = 3;
+icon-3 = 4;
+icon-4 = 5;
+icon-5 = 6;
+icon-6 = 7;
+icon-7 = 8;
+icon-8 = 9;
+icon-9 = 10;
+
+label-active = %icon%
+;label-active-padding = 1
+label-active-foreground = ${colors.shade3}
+label-active-background = ${colors.shade16}
+label-active-overline = ${colors.background}
+label-active-underline = ${colors.background}
+label-active-padding = 1
+
+label-occupied = %icon%
+;label-occupied-padding = 1
+label-occupied-background = ${colors.shade16}
+label-occupied-foreground = ${colors.shade7}
+label-occupied-overline = ${colors.background}
+label-occupied-underline = ${colors.background}
+label-occupied-padding = 1
+
+label-urgent = %icon%
+;label-urgent-padding = 1
+label-urgent-background = ${colors.shade16}
+label-urgent-foreground = ${colors.shade1}
+label-urgent-overline = ${colors.background}
+label-urgent-underline = ${colors.background}
+label-urgent-padding = 1
+
+label-empty = %icon%
+;label-empty-padding = 1
+label-empty-background = ${colors.shade16}
+label-empty-foreground = ${colors.shade4}
+label-empty-overline = ${colors.background}
+label-empty-underline = ${colors.background}
+label-empty-padding = 1
 
 [module/bspwm]
 type = internal/bspwm
