@@ -1,0 +1,24 @@
+#! /bin/sh
+
+# Variable Defines
+color0=#3B4252
+color4=#D8DEE9
+
+# Make sure sxhkd is always running
+while :; do
+    if pgrep -x sxhkd > /dev/null; then
+        true
+    else
+        sxhkd &
+    fi
+    sleep 5
+done &
+#Fix Mouse curoor on startup 
+xsetroot -cursor_name left_ptr
+setxkbmap -option ctrl:nocaps
+
+#Auto-Start
+bash ~/.config/polybar/launch.sh &
+lxpolkit &
+picom --config "$HOME/.config/bspwm/picom.conf" &
+nitrogen --restore &

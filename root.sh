@@ -16,10 +16,10 @@ dpkg -i 'Custom Packages/rofi_1.7.0-1_amd64.deb'
 # Update packages list
 apt update
 
-apt dist-upgrade
+#apt dist-upgrade
 
 # Add base packages
-apt install psmisc alsa-utils brave-browser brightnessctl pulseaudio unzip picom bspwm polybar sddm rofi kitty thunar flameshot neofetch sxhkd git lxpolkit lxappearance xorg
+apt install psmisc alsa-utils brave-browser brightnessctl pulseaudio unzip picom bspwm polybar lightdm light-locker rofi kitty thunar flameshot neofetch sxhkd git lxpolkit lxappearance xorg
 
 # Download Nordic Theme
 cd /usr/share/themes/
